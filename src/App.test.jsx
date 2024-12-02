@@ -1,25 +1,22 @@
-// App.test.jsx
-
 import { describe, it, expect } from "vitest";
-import { render, screen } from "@testing-library/react";
+import { render, screen, fireEvent } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import App from "./App";
 
+
 describe("App component", () => {
-  it("renders magnificent monkeys", () => {
-    // since screen does not have the container property, we'll destructure render to obtain a container for this test
+  it("renders home page", () => {
     const { container } = render(<App />);
     expect(container).toMatchSnapshot();
   });
 
-  it("renders radical rhinos after button click", async () => {
-    const user = userEvent.setup();
-
+  it("renders shopping page", () => {
     render(<App />);
-    const button = screen.getByRole("button", { name: "Click Me" });
+    const link = screen.getByTestId("shopLink");
 
-    await user.click(button);
+    fireEvent.click(link);
+    
+    expect(screen.findByText(/items/i));
 
-    expect(screen.getByRole("heading").textContent).toMatch(/radical rhinos/i);
   });
 });

@@ -1,14 +1,39 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`App component > renders magnificent monkeys 1`] = `
+exports[`App component > renders home page 1`] = `
 <div>
-  <button
-    type="button"
+  <div
+    class="container"
   >
-    Click Me
-  </button>
-  <h1>
-    Magnificent Monkeys
-  </h1>
+    <nav>
+      <ul
+        class="flex"
+      >
+        <li>
+          <a
+            data-discover="true"
+            href="/"
+          >
+            Home
+          </a>
+        </li>
+        <li>
+          <a
+            data-discover="true"
+            data-testid="shopLink"
+            href="/shop"
+          >
+            Shop
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <h1>
+      Welcome
+    </h1>
+    <p>
+      This is not a real shop-- still, feel free to take a look around.
+    </p>
+  </div>
 </div>
 `;
