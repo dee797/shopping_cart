@@ -1,22 +1,21 @@
 import { describe, it, expect } from "vitest";
-import { render, screen, fireEvent } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
+import { render, renderHook} from "@testing-library/react";
+import { useFetchProducts } from "./components/Shop";
 import App from "./App";
+import { BrowserRouter } from "react-router-dom";
 
 
 describe("App component", () => {
   it("renders home page", () => {
-    const { container } = render(<App />);
+    const { container } = render(<BrowserRouter><App /></BrowserRouter>);
     expect(container).toMatchSnapshot();
   });
-
-  it("renders shopping page", () => {
-    render(<App />);
-    const link = screen.getByTestId("shopLink");
-
-    fireEvent.click(link);
-    
-    expect(screen.findByText(/items/i));
-
-  });
 });
+
+describe("Shop component", () => {
+  it("fetch products", () => {
+    const { result } = renderHook(() => useFetchProducts());
+
+    expect(result.current.products).not.toBeUndefined();
+  });
+})
