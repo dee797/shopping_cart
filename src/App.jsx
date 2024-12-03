@@ -1,11 +1,10 @@
-import { useState } from "react";
-import { BrowserRouter, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 const App = () => {
 
   return (
-    <BrowserRouter>
+    <>
       <div className="container">
         <nav>
           <ul className="flex">
@@ -23,7 +22,7 @@ const App = () => {
         <p>This is not a real shop-- still, feel free to take a look around.</p>
         
       </div>
-    </BrowserRouter>
+    </>
   );
 };
 
