@@ -14,8 +14,8 @@ describe("App component", () => {
 
 describe("Shop component", () => {
   it("fetch products", () => {
-    const { result } = renderHook(() => useFetchProducts());
+    const { result } = renderHook(async () => useFetchProducts());
 
-    expect(result.current.products).not.toBeUndefined();
+    expect(result.current.products).not.toBeNull();
   });
 })
