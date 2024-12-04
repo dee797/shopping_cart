@@ -1,7 +1,5 @@
-import { useParams } from "react-router-dom";
 import Product from "./Product";
 import { useState, useEffect } from "react";
-
 
 
 const useFetchProducts = () => {
@@ -10,7 +8,7 @@ const useFetchProducts = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("https://fakestoreapi.com/products?limit=12", { mode: "cors" })
+    fetch("https://fakestoreapi.com/products/category/women's%20clothing", { mode: "cors" })
       .then((response) => {
         if (response.status >= 400) {
           throw new Error("server error");
@@ -32,14 +30,21 @@ const Shop = () => {
   const { products, error, loading } = useFetchProducts();
 
 
-  if (loading) return (<div className="loader"></div>);
+  if (loading) return (<div className="h-screen w-screen flex items-center justify-center"><div className="loader mx-auto"></div></div>);
   if (error) return (<p>A network error was encountered.</p>);
   
   return (
     <div>
       <h1>Shop For Items</h1>
       <hr />
-      <Product product={products[0]}/>
+      <div className="grid grid-rows-3 grid-cols-2">
+        <Product product={products[0]}/>
+        <Product product={products[1]}/>
+        <Product product={products[2]}/>
+        <Product product={products[3]}/>
+        <Product product={products[4]}/>
+        <Product product={products[5]}/>
+      </div>
     </div>
   )
 };
