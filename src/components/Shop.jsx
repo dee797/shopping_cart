@@ -31,20 +31,22 @@ const Shop = () => {
 
 
   if (loading) return (<div className="h-screen w-screen flex items-center justify-center"><div className="loader mx-auto"></div></div>);
-  if (error) return (<p>A network error was encountered.</p>);
+  if (error) return (<p className="h-screen w-screen text-center">A network error was encountered.</p>);
   
   return (
     <div>
       <h1>Shop For Items</h1>
       <hr />
-      <div className="grid grid-rows-3 grid-cols-2">
-        <Product product={products[0]}/>
-        <Product product={products[1]}/>
-        <Product product={products[2]}/>
-        <Product product={products[3]}/>
-        <Product product={products[4]}/>
-        <Product product={products[5]}/>
-      </div>
+      <div className="flex flex-col justify-center items-center">
+        <div className="grid grid-rows-2 grid-cols-3 ">
+          <Product product={products[0]}/>
+          <Product product={products[1]}/>
+          <Product product={products[2]}/>
+          <Product product={products[3]}/>
+          <Product product={products[4]}/>
+          <Product product={products[5]}/>
+        </div>
+        </div>
     </div>
   )
 };
