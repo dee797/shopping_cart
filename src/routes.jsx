@@ -1,4 +1,5 @@
 import App from "./App";
+import Cart from "./components/Cart";
 import {Shop} from "./components/Shop";
 import ErrorPage from "./components/ErrorPage";
 
@@ -13,8 +14,8 @@ const routes = [
     element: <Shop />,
   },
   {
-    path: "shop/:name",
-    element: <Shop />,
+    path: "cart",
+    element: <Cart />,
   },
 ];
 
