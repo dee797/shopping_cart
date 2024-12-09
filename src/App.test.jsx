@@ -1,7 +1,6 @@
 import { describe, it, expect } from "vitest";
 import { render, renderHook} from "@testing-library/react";
-import { useFetchProducts } from "./components/Shop";
-import App from "./App";
+import { App, useFetchProducts } from "./App";
 import { BrowserRouter } from "react-router-dom";
 
 

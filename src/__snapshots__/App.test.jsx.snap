@@ -3,37 +3,11 @@
 exports[`App component > renders home page 1`] = `
 <div>
   <div
-    class="container"
+    class="h-screen w-screen flex items-center justify-center"
   >
-    <nav>
-      <ul
-        class="flex"
-      >
-        <li>
-          <a
-            data-discover="true"
-            href="/"
-          >
-            Home
-          </a>
-        </li>
-        <li>
-          <a
-            data-discover="true"
-            data-testid="shopLink"
-            href="/shop"
-          >
-            Shop
-          </a>
-        </li>
-      </ul>
-    </nav>
-    <h1>
-      Welcome
-    </h1>
-    <p>
-      This is not a real shop-- still, feel free to take a look around.
-    </p>
+    <div
+      class="loader mx-auto"
+    />
   </div>
 </div>
 `;
