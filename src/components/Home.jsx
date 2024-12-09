@@ -1,7 +1,7 @@
 import { Link, useOutletContext } from "react-router-dom";
 
 const Home = () => {
-    const products = useOutletContext();
+    const [products] = useOutletContext();
 
     return (
         <div className="grid grid-rows-1 grid-cols-5 w-full">
