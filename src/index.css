@@ -46,10 +46,6 @@ button:hover, .btn:hover {
   border-color: #646cff;
   background-color: black;
 }
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
 
 .loader {
   border: 16px solid #dadada; /* Light grey */
