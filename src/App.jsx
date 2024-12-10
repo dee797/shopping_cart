@@ -28,9 +28,7 @@ const useFetchProducts = () => {
 
 const App = () => {
   const { products, error, loading } = useFetchProducts();
-  const [ cartCount, setCartCount ] = useState(0);
-
-
+  const [ cartItems, setCartItems ] = useState({});
 
   if (loading) return (<div className="h-screen w-screen flex items-center justify-center"><div className="loader mx-auto"></div></div>);
   if (error) return (<p className="h-screen w-screen text-center">A network error was encountered.</p>);
@@ -52,7 +50,9 @@ const App = () => {
                       <svg xmlns="http://www.w3.org/2000/svg" className="mr-2 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
                       </svg>
-                      ({`${cartCount}`})
+                      ({`${Object.keys(cartItems).reduce((accumulator, item) => {
+                          return accumulator + cartItems[item].quantity
+                        }, 0)}`})
                     </div>
                 </Link>
               </li>
@@ -61,7 +61,7 @@ const App = () => {
         </div>
       </header>
 
-      <Outlet context={[products, setCartCount]}/>
+      <Outlet context={[products, cartItems, setCartItems]}/>
 
 
       <footer className="px-4 bg-black">
