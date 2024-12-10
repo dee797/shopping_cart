@@ -25,8 +25,10 @@ const Card = ({ product, id }) => {
             type="button" 
             className="flex items-center justify-center rounded-md bg-slate-900 px-4 py-2.5 text-center text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300"
             onClick={() => {
-              setCartItems(oldCartItems => ({...oldCartItems, [id] : { product: product, quantity: oldCartItems[id] ? oldCartItems[id].quantity + itemCount : itemCount}}));
-              alert("Item(s) added to cart.");
+              if (itemCount > 0) {
+                setCartItems(oldCartItems => ({...oldCartItems, [id] : { product: product, quantity: oldCartItems[id] ? oldCartItems[id].quantity + itemCount : itemCount}}));
+                alert("Item(s) added to cart.");
+              }
             }}
           >
             <svg xmlns="http://www.w3.org/2000/svg" className="mr-2 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
