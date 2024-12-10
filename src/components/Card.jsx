@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useOutletContext } from "react-router-dom";
 
-const Card = ({ product }) => {
-  const [, setCartCount] = useOutletContext();
+const Card = ({ product, id }) => {
+  const [, , setCartItems] = useOutletContext();
   const [ itemCount, setItemCount ] = useState(0);
 
   return (
@@ -25,7 +25,7 @@ const Card = ({ product }) => {
             type="button" 
             className="flex items-center justify-center rounded-md bg-slate-900 px-4 py-2.5 text-center text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300"
             onClick={() => {
-              setCartCount((oldCartCount) => oldCartCount += itemCount);
+              setCartItems(oldCartItems => ({...oldCartItems, [id] : { product: product, quantity: oldCartItems[id] ? oldCartItems[id].quantity + itemCount : itemCount}}));
               alert("Item(s) added to cart.");
             }}
           >
