@@ -34,7 +34,7 @@ const App = () => {
   if (error) return (<p className="h-screen w-screen text-center">A network error was encountered.</p>);
 
   return (
-    <div className="flex flex-col w-full">
+    <div className="flex flex-col w-full h-screen">
       <header className="px-4 bg-black">
         <div className="relative mx-auto py-6 flex max-w-screen-lg flex-col sm:flex-row sm:items-center sm:justify-between">
           <Link className="flex items-center text-3xl font-black" to="/">
