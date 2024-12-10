@@ -12,12 +12,9 @@ const Shop = () => {
       <hr />
       <div className="flex flex-col justify-center items-center">
         <div className="grid grid-rows-2 grid-cols-3 ">
-          <Card product={products[0]}/>
-          <Card product={products[1]}/>
-          <Card product={products[2]}/>
-          <Card product={products[3]}/>
-          <Card product={products[4]}/>
-          <Card product={products[5]}/>
+          {products.map((product) => {
+            return <Card product={product} key={product.id} id={product.id}/>
+          })}
         </div>
       </div>
     </>
