@@ -1,11 +1,12 @@
 import { Link, useOutletContext } from "react-router-dom";
+import imageUrl from "../assets/hannah-morgan-ycVFts5Ma4s-unsplash.jpg"
 
 const Home = () => {
     const [products] = useOutletContext();
 
     return (
         <div className="grid grid-rows-1 grid-cols-5 w-full">
-        <div className="col-span-3 row-span-3"><img width="6000px" height="4000px" className="w-full h-full z-10" src="./src/assets/hannah-morgan-ycVFts5Ma4s-unsplash.jpg" alt="Picture of clothes" /></div>
+        <div className="col-span-3 row-span-3"><img width="6000px" height="4000px" className="w-full h-full z-10" src={imageUrl} alt="Picture of clothes" /></div>
         <div className="flex flex-col justify-start gap-y-5 col-span-2">
           <h1 className="p-14 my-4 text-5xl font-bold h-fit text-center">Welcome</h1>
           <div className="my-4 px-16 text-xl text-gray-700 flex flex-col gap-y-10">
