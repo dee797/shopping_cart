@@ -1,8 +1,10 @@
-# React + Vite
+# Shopping Cart
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A frontend project that simulates an online store where you can add items to a shopping cart. Based off of The Odin Project's "Shopping Cart" assignment. This project uses the following technologies:
 
-Currently, two official plugins are available:
+- ReactJS
+- Vite
+- Tailwind CSS
+- Fake Store API (https://github.com/keikaavousi/fake-store-api)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Visit the site at https://shopping-cart-seven-green.vercel.app/
