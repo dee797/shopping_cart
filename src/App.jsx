@@ -36,12 +36,12 @@ const App = () => {
   return (
     <div className="flex flex-col w-full h-screen">
       <header className="px-4 bg-black">
-        <div className="relative mx-auto py-6 flex max-w-screen-lg flex-col sm:flex-row sm:items-center sm:justify-between">
+        <div className="py-6 flex max-w-full justify-between items-center box-border">
           <Link className="flex items-center text-3xl font-black" to="/">
             <span className="text-neutral-50">Super Apparel</span>
           </Link>
-          <nav aria-label="Header Navigation" className="peer-checked:block hidden pl-2 py-6 sm:block sm:py-0">
-            <ul className="flex flex-col gap-y-4 sm:flex-row sm:gap-x-14 text-2xl">
+          <nav aria-label="Header Navigation" className="pl-2 py-6 sm:py-0">
+            <ul id="links" className="flex gap-y-4 flex-row gap-x-8 text-2xl">
               <li className=""><Link className="text-neutral-50 hover:text-neutral-300" to="/">Home</Link></li>
               <li className=""><Link className="text-neutral-50 hover:text-neutral-300" to="shop" state={{products: products}}>Shop</Link></li>
               <li className="flex justify-end items-end">

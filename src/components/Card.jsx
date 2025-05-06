@@ -12,7 +12,7 @@ const Card = ({ product, id }) => {
       </div>
       <div className="mt-4 px-5 pb-5">
         <h5 className="text-xl tracking-tight text-slate-900">{product.title}</h5>
-        <div className="mt-2 mb-5 flex items-center justify-between">
+        <div className="pt-2 pb-5 flex items-center justify-between">
           <p>
             <span className="text-3xl font-bold text-slate-900">${product.price}</span>
           </p>
@@ -23,7 +23,7 @@ const Card = ({ product, id }) => {
         <div className="flex justify-between items-center">
           <button 
             type="button" 
-            className="flex items-center justify-center rounded-md bg-slate-900 px-4 py-2.5 text-center text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300"
+            className="cartButton flex items-center justify-center rounded-md bg-slate-900 px-4 py-2.5 text-center text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300"
             onClick={() => {
               if (itemCount > 0) {
                 setCartItems(oldCartItems => ({...oldCartItems, [id] : { product: product, quantity: oldCartItems[id] ? oldCartItems[id].quantity + itemCount : itemCount}}));
