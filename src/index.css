@@ -6,6 +6,8 @@
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
+  width: 100vw;
+  overflow-x: hidden;
 
   color-scheme: light dark;
   color: #213547;
@@ -47,6 +49,17 @@ button:hover, .btn:hover {
   background-color: black;
 }
 
+header > div {
+  margin: 0px 50px;
+}
+
+#shopGrid {
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  justify-items: center;
+  align-items: start;
+  margin: 50px 20px;
+}
+
 .loader {
   border: 16px solid #dadada; /* Light grey */
   border-top: 16px solid #3498db; /* Blue */
@@ -59,4 +72,50 @@ button:hover, .btn:hover {
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+
+@media only screen and (max-width: 1025px) {
+  header > div {
+    margin: 0px 20px;
+  }
+
+  #welcome {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 520px) {
+  header > div {
+    margin: 0px;
+    flex-direction: column;
+  }
+
+  nav {
+    width: 100%;
+  }
+
+  #links {
+    gap: 16px 0px;
+    justify-content: space-around;
+  }
+
+  #shopGrid {
+    row-gap: 40px;
+    grid-template-columns: repeat(auto-fit, 100%);
+  }
+
+  #shopGrid div {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width: 330px) {
+  .cartButton {
+    flex-direction: column;
+  }
+
+  #shopGrid button svg {
+    margin: 0px;
+  }
 }
