@@ -1,10 +1,9 @@
 import Card from "./Card";
-import { useLocation } from "react-router-dom";
+import { useOutletContext } from "react-router-dom";
 
 
 const Shop = () => {
-  const location = useLocation();
-  const { products } = location.state;
+  const [products] = useOutletContext();
   
   return (
     <>
